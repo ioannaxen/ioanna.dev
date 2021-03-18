@@ -6,6 +6,7 @@ import { colors } from '../styles'
 
 const Footer = styled.footer`
   color: ${colors.richBlack};
+  padding: 1rem;
 `
 
 type Props = {
