@@ -1,6 +1,6 @@
-import * as React from "react"
-import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import * as React from 'react'
+import { Helmet } from 'react-helmet'
+import { useStaticQuery, graphql } from 'gatsby'
 
 type Props = {
   title: string
@@ -9,7 +9,7 @@ type Props = {
   meta?: Array<any>
 }
 
-const SEO = ({ title, description = "", lang = "en", meta = [] }: Props) => {
+const SEO = ({ title, description = '', lang = 'en', meta = [] }: Props) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -21,7 +21,7 @@ const SEO = ({ title, description = "", lang = "en", meta = [] }: Props) => {
           }
         }
       }
-    `
+    `,
   )
 
   const metaDescription = description || site.siteMetadata.description
