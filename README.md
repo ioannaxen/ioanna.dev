@@ -4,12 +4,11 @@ This repository contains code for the website hosted at [ioanna.dev](http://ioan
 
 It was bootstrapped using the [Gatsby](https://www.gatsbyjs.com/) [default starter](https://github.com/gatsbyjs/gatsby-starter-default). It also uses TypeScript and styled components.
 
-
 To get started, clone the project and run:
-`npm install`
+`yarn`
 
 To develop:
-`gatsby develop`
+`yarn develop`
 and then head over to http://localhost:8000
 
 For more information, see [Gatsby documentation](https://www.gatsbyjs.com/).
