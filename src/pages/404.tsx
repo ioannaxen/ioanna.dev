@@ -40,7 +40,7 @@ const NotFoundPage = () => (
     <Wrapper>
       <Header>Page Not Found</Header>
       <Paragraph>
-        You just hit a route that doesn&#39;t exist... the sadness.
+        Oops, you just hit a route that doesn&#39;t exist.
       </Paragraph>
       <Paragraph>
         Why not go back to the <StyledLink to="/">home page</StyledLink>?
