@@ -1,4 +1,5 @@
-import * as React from 'react'
+import React, { FunctionComponent, PropsWithChildren } from 'react'
+
 import styled from 'styled-components'
 
 import { GlobalStyle } from '../globalStyles'
@@ -9,15 +10,11 @@ const Footer = styled.footer`
   padding: 1rem;
 `
 
-type Props = {
-  children: React.ReactNode
-}
-
-const Layout = ({ children }: Props) => (
-  <React.Fragment>
+const Layout: FunctionComponent<PropsWithChildren> = ({ children }) => (
+  <>
     <GlobalStyle />
     <main>{children}</main>
     <Footer>© {new Date().getFullYear()} by Ioanna Xenaki</Footer>
-  </React.Fragment>
+  </>
 )
 export default Layout

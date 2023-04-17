@@ -1,10 +1,10 @@
-import * as React from 'react'
+import React from 'react'
+
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 
 import Layout from '../components/layout'
-import SEO from '../components/seo'
-
+import { SEO } from '../components/seo'
 import { breakpoints, colors } from '../styles'
 
 const Wrapper = styled.div`
@@ -37,11 +37,10 @@ const StyledLink = styled(Link)`
 
 const NotFoundPage = () => (
   <Layout>
-    <SEO title="404: Not found" />
     <Wrapper>
       <Header>Page Not Found</Header>
       <Paragraph>
-        You just hit a route that doesn&#39;t exist... the sadness.
+        Oops, you just hit a route that doesn&#39;t exist.
       </Paragraph>
       <Paragraph>
         Why not go back to the <StyledLink to="/">home page</StyledLink>?
@@ -51,3 +50,5 @@ const NotFoundPage = () => (
 )
 
 export default NotFoundPage
+
+export const Head = () => <SEO title="Page Not Found" />

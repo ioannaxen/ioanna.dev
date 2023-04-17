@@ -1,75 +1,25 @@
-import * as React from 'react'
-import { Helmet } from 'react-helmet'
-import { useStaticQuery, graphql } from 'gatsby'
+import React, { FunctionComponent, PropsWithChildren } from 'react'
 
-type Props = {
+import { useSiteMetadata } from '../hooks/useSiteMetadata'
+
+interface SEOProps {
   title: string
-  description?: string
-  lang?: string
-  meta?: Array<any>
 }
 
-const SEO = ({ title, description = '', lang = 'en', meta = [] }: Props) => {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
-        }
-      }
-    `,
-  )
-
-  const metaDescription = description || site.siteMetadata.description
-  const defaultTitle = site.siteMetadata?.title
+export const SEO: FunctionComponent<PropsWithChildren<SEOProps>> = ({
+  title,
+  children,
+}) => {
+  const { title: defaultTitle, description, siteUrl } = useSiteMetadata()
 
   return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={defaultTitle || undefined}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata?.author || ``,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-      ].concat(meta)}
-    />
+    <>
+      <title>{title || defaultTitle}</title>
+      <meta name="description" content={description} />
+      <meta name="twitter:title" content={title || defaultTitle} />
+      <meta name="twitter:url" content={siteUrl} />
+      <meta name="twitter:description" content={description} />
+      {children}
+    </>
   )
 }
-
-export default SEO

@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
-import '@fontsource/cormorant-garamond'
+
 import { breakpoints, colors } from './styles'
 
 export const GlobalStyle = createGlobalStyle`
