@@ -1,8 +1,9 @@
-import * as React from 'react'
+import React from 'react'
+
 import styled from 'styled-components'
 
 import Layout from '../components/layout'
-import SEO from '../components/seo'
+import { SEO } from '../components/seo'
 import { breakpoints, colors } from '../styles'
 
 const Wrapper = styled.div`
@@ -30,7 +31,6 @@ const Span = styled.span`
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
     <Wrapper>
       <Header>
         Hi, my name is <Span>Ioanna Xenaki</Span>
@@ -41,3 +41,5 @@ const IndexPage = () => (
 )
 
 export default IndexPage
+
+export const Head = () => <SEO title="Ioanna Xenaki - Frontend Developer" />

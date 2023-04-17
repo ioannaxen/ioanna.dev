@@ -1,42 +1,43 @@
 {
   "name": "ioanna.dev",
-  "description": "Ioanna's personal website",
+  "description": "ioanna.dev",
   "version": "1.0.0",
   "author": "Ioanna Xenaki",
+  "private": true,
   "dependencies": {
-    "@fontsource/cormorant-garamond": "^4.2.2",
-    "babel-plugin-styled-components": "^1.12.0",
-    "gatsby": "^3.0.1",
-    "gatsby-plugin-gatsby-cloud": "^2.0.0",
-    "gatsby-plugin-image": "^1.0.0",
-    "gatsby-plugin-manifest": "^3.0.0",
-    "gatsby-plugin-offline": "^4.0.0",
-    "gatsby-plugin-react-helmet": "^4.0.0",
-    "gatsby-plugin-sharp": "^3.0.0",
-    "gatsby-plugin-styled-components": "^4.1.0",
-    "gatsby-source-filesystem": "^3.0.0",
-    "gatsby-transformer-sharp": "^3.0.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
+    "babel-plugin-styled-components": "^2.1.1",
+    "gatsby": "^5.8.1",
+    "gatsby-omni-font-loader": "^2.0.2",
+    "gatsby-plugin-manifest": "^5.8.0",
+    "gatsby-plugin-styled-components": "^6.8.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
-    "styled-components": "^5.2.1"
+    "styled-components": "^5.3.9"
   },
   "devDependencies": {
-    "@types/react-helmet": "^6.1.0",
-    "@types/styled-components": "^5.1.9",
-    "prettier": "2.2.1"
+    "@types/node": "^18.15.11",
+    "@types/react": "^18.0.35",
+    "@types/react-dom": "^18.0.11",
+    "@types/styled-components": "^5.1.26",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "prettier": "^2.8.7",
+    "typescript": "^5.0.4"
   },
   "keywords": [
     "gatsby"
   ],
   "license": "0BSD",
   "scripts": {
+    "dev": "gatsby develop",
+    "start": "gatsby develop",
     "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "yarn develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "typecheck": "tsc --noEmit",
+    "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "lint": "eslint src --ext .ts,.tsx,.js,.jsx"
   }
 }
