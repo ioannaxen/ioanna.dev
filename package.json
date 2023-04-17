@@ -33,9 +33,10 @@
   "scripts": {
     "dev": "gatsby develop",
     "start": "gatsby develop",
-    "build": "gatsby build",
+    "build-only": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "build": "yarn clean && yarn build",
     "typecheck": "tsc --noEmit",
     "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "lint": "eslint src --ext .ts,.tsx,.js,.jsx"
